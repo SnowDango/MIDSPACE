@@ -60,6 +60,7 @@
      <Compile Include="Assets\UIchanger.cs" />
      <Compile Include="Assets\bulletController.cs" />
      <Compile Include="Assets\enemyBulletController.cs" />
+     <Compile Include="Assets\enemyBulletCreate.cs" />
      <Compile Include="Assets\enemyController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/yuki/BarrageShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

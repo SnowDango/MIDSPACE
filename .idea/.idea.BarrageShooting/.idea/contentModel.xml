@@ -10,6 +10,7 @@
         <e p="UIchanger.cs" t="Include" />
         <e p="bulletController.cs" t="Include" />
         <e p="enemyBulletController.cs" t="Include" />
+        <e p="enemyBulletCreate.cs" t="Include" />
         <e p="enemyController.cs" t="Include" />
       </e>
       <e p="BarrageShooting.sln" t="IncludeFlat" />
