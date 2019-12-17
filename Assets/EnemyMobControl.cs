@@ -9,22 +9,22 @@ namespace Yukidango.BarrageShooting.Mob
 	{
 
 
-		public static class HitPoint
+		/*public static class HitPoint
 		{
 			public static int hitPoint = 1;
-		}
+		}*/
 
 		public float dx;
 		public float dy;
-		public Boolean start = false;
+		public Boolean start = true;
 		public GameObject enemyBulletPrefab;
 
-		public void enemyData(double angels)
+		/*public void enemyData(double angels)
 		{
 			dx = (float) (0.03 * Math.Cos(angels));
 			dy = (float) (0.03 * Math.Sin(angels));
-			start = true;
 		}
+		*/
 
 		// Start is called before the first frame update
 		void Start()
@@ -36,12 +36,10 @@ namespace Yukidango.BarrageShooting.Mob
 		void Update()
 		{
 			dy = -0.03f;
-
-			if (start) transform.Translate(dx, dy, 0);
+			transform.Translate(dx, dy, 0);
 
 			if (transform.position.y < -5 || transform.position.y > 5
-				|| transform.position.x > 6.5 || transform.position.x < -6.5)
-			{
+				|| transform.position.x > 6.5 || transform.position.x < -6.5) {
 				Destroy(gameObject);
 			}
 
@@ -49,8 +47,7 @@ namespace Yukidango.BarrageShooting.Mob
 			{
 				fireBullet(this, 0, 0.05f, (float) ToRadian(-90));
 			}
-
-			checkHP();
+			
 		}
 
 		public static void fireBullet(EnemyMobControl e, float x, float y, float data)
@@ -67,17 +64,10 @@ namespace Yukidango.BarrageShooting.Mob
 		{
 			return (double) (angle * Math.PI / 180);
 		}
-
-		void checkHP()
-		{
-			if (HitPoint.hitPoint <= 0) Destroy(gameObject);
-		}
-
-		void OnTriggerEnter2D(Collider2D coll)
-		{
-			if (coll.gameObject.CompareTag("playerBullet"))
-			{
-				HitPoint.hitPoint -= 1;
+		
+		void OnTriggerEnter2D(Collider2D coll) {
+			if (coll.gameObject.CompareTag("playerBullet")) {
+				Destroy(this.gameObject);
 			}
 		}
 	}

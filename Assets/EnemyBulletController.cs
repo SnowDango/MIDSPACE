@@ -29,7 +29,6 @@ public class EnemyBulletController : MonoBehaviour {
     }
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.CompareTag("Player")) {
-			CpControl.HitPoint.hitPoint -= 1;
 			Destroy(gameObject);
 		}
 	}

@@ -17,7 +17,7 @@ namespace Yukidango.BarrageShooting.Boss
 
 			
 
-			if (e.transform.position.x >= 2.45 || e.transform.position.x <= -2.45) {
+			if (e.transform.position.x >= 5.0f || e.transform.position.x <= -5.0f) {
 				sideInversion(); 
 			}else if (frameCount % 30 == 0) {
 				int sideMode = Random.Range(0, 4);
