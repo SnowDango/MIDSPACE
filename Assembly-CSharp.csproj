@@ -56,12 +56,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CP_machineContrroller.cs" />
+     <Compile Include="Assets\BossBulletCreate.cs" />
+     <Compile Include="Assets\BossController.cs" />
+     <Compile Include="Assets\BossMoveControl.cs" />
+     <Compile Include="Assets\CpBulletController.cs" />
+     <Compile Include="Assets\CpControl.cs" />
+     <Compile Include="Assets\EnemyBulletController.cs" />
+     <Compile Include="Assets\EnemyCreate.cs" />
+     <Compile Include="Assets\EnemyMobControl.cs" />
      <Compile Include="Assets\UIchanger.cs" />
-     <Compile Include="Assets\bulletController.cs" />
-     <Compile Include="Assets\enemyBulletController.cs" />
-     <Compile Include="Assets\enemyBulletCreate.cs" />
-     <Compile Include="Assets\enemyController.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/yuki/BarrageShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

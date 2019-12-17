@@ -6,12 +6,15 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CP_machineContrroller.cs" t="Include" />
+        <e p="BossBulletCreate.cs" t="Include" />
+        <e p="BossController.cs" t="Include" />
+        <e p="BossMoveControl.cs" t="Include" />
+        <e p="CpBulletController.cs" t="Include" />
+        <e p="CpControl.cs" t="Include" />
+        <e p="EnemyBulletController.cs" t="Include" />
+        <e p="EnemyCreate.cs" t="Include" />
+        <e p="EnemyMobControl.cs" t="Include" />
         <e p="UIchanger.cs" t="Include" />
-        <e p="bulletController.cs" t="Include" />
-        <e p="enemyBulletController.cs" t="Include" />
-        <e p="enemyBulletCreate.cs" t="Include" />
-        <e p="enemyController.cs" t="Include" />
       </e>
       <e p="BarrageShooting.sln" t="IncludeFlat" />
       <e p="Temp/bin" t="ExcludeRecursive" />

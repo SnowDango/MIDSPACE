@@ -14,6 +14,6 @@ public class UIchanger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        enemyHp.GetComponent<Text>().text = "enemy HP: " + enemyController.HitPoint.hitPoint.ToString() ;
+        enemyHp.GetComponent<Text>().text = "enemy HP: " + BossController.HitPoint.hitPoint.ToString() ;
     }
 }
