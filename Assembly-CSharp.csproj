@@ -56,9 +56,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BossBulletCreate.cs" />
-     <Compile Include="Assets\BossController.cs" />
-     <Compile Include="Assets\BossMoveControl.cs" />
+     <Compile Include="Assets\BossObj\BossBulletCreate.cs" />
+     <Compile Include="Assets\BossObj\BossController.cs" />
+     <Compile Include="Assets\BossObj\BossMoveControl.cs" />
      <Compile Include="Assets\CpBulletController.cs" />
      <Compile Include="Assets\CpControl.cs" />
      <Compile Include="Assets\EnemyBulletController.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
+using Yukidango.BarrageShooting.Boss;
 
 public class UIchanger : MonoBehaviour {
     // Start is called before the first frame update
