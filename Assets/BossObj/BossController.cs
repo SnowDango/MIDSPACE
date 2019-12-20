@@ -64,16 +64,7 @@ namespace Yukidango.BarrageShooting.Boss
             {
                 BossBulletCreate.parallelCircleBullet(Time.frameCount, this);
             }
-
-            checkHP();
-        }
-
-        public void checkHP()
-        {
-            if (HitPoint.hitPoint <= 0)
-            {
-                Destroy(this.gameObject);
-            }
+            
         }
 
         public double ToRadian(double angle)
@@ -86,6 +77,7 @@ namespace Yukidango.BarrageShooting.Boss
             if (coll.gameObject.CompareTag("playerBullet"))
             {
                 HitPoint.hitPoint -= 1;
+                CheckHitPoint.checkHP(this, HitPoint.hitPoint);
             }
         }
     }

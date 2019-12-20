@@ -11,11 +11,16 @@
           <e p="BossController.cs" t="Include" />
           <e p="BossMoveControl.cs" t="Include" />
         </e>
-        <e p="CpBulletController.cs" t="Include" />
-        <e p="CpControl.cs" t="Include" />
-        <e p="EnemyBulletController.cs" t="Include" />
+        <e p="CheckHitPoint.cs" t="Include" />
         <e p="EnemyCreate.cs" t="Include" />
-        <e p="EnemyMobControl.cs" t="Include" />
+        <e p="EnemyObj" t="Include">
+          <e p="EnemyBulletController.cs" t="Include" />
+          <e p="EnemyMobControl.cs" t="Include" />
+        </e>
+        <e p="PlayerObj" t="Include">
+          <e p="CpBulletController.cs" t="Include" />
+          <e p="CpControl.cs" t="Include" />
+        </e>
         <e p="UIchanger.cs" t="Include" />
       </e>
       <e p="BarrageShooting.sln" t="IncludeFlat" />
