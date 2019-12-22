@@ -6,7 +6,11 @@ using Yukidango.BarrageShooting.Mob;
 
 public class CheckHitPoint : MonoBehaviour {
 	
-	public static void checkHP(EnemyMobControl e,double hitPoint) { 
+	public static void checkHP(EnemyMobControl1 e,double hitPoint) { 
+		if (hitPoint <= 0) Destroy(e.gameObject);
+	}
+	
+	public static void checkHP(EnemyMobControl2 e,double hitPoint) { 
 		if (hitPoint <= 0) Destroy(e.gameObject);
 	}
 	

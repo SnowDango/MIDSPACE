@@ -13,9 +13,10 @@
         </e>
         <e p="CheckHitPoint.cs" t="Include" />
         <e p="EnemyCreate.cs" t="Include" />
+        <e p="EnemyMobControl2.cs" t="Include" />
         <e p="EnemyObj" t="Include">
           <e p="EnemyBulletController.cs" t="Include" />
-          <e p="EnemyMobControl.cs" t="Include" />
+          <e p="EnemyMobControl1.cs" t="Include" />
         </e>
         <e p="PlayerObj" t="Include">
           <e p="CpBulletController.cs" t="Include" />
