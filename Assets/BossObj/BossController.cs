@@ -78,6 +78,7 @@ namespace Yukidango.BarrageShooting.Boss
             {
                 HitPoint.hitPoint -= 1;
                 CheckHitPoint.checkHP(this, HitPoint.hitPoint);
+                ScoreCount.scoreCount();
             }
         }
     }

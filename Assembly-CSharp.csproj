@@ -66,6 +66,7 @@
      <Compile Include="Assets\EnemyObj\EnemyMobControl1.cs" />
      <Compile Include="Assets\PlayerObj\CpBulletController.cs" />
      <Compile Include="Assets\PlayerObj\CpControl.cs" />
+     <Compile Include="Assets\ScoreCount.cs" />
      <Compile Include="Assets\UIchanger.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/yuki/BarrageShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

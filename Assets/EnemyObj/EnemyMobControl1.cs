@@ -17,24 +17,18 @@ namespace Yukidango.BarrageShooting.Mob
 		public float dy;
 		public Boolean start = true;
 		public GameObject enemyBulletPrefab;
-
-		/*public void enemyData(double angels)
-		{
-			dx = (float) (0.03 * Math.Cos(angels));
-			dy = (float) (0.03 * Math.Sin(angels));
-		}
-		*/
+		private float speed = 0.05f;
 
 		// Start is called before the first frame update
 		void Start()
 		{
-
+			dy = -1 * speed;
 		}
 
 		// Update is called once per frame
 		void Update()
 		{
-			dy = -0.03f;
+			
 			transform.Translate(dx, dy, 0);
 
 			if (transform.position.y < -5 || transform.position.y > 5
@@ -71,6 +65,7 @@ namespace Yukidango.BarrageShooting.Mob
 			{
 				EnemyMobControl1.HitPoint.hitPoint -= 1;
 				CheckHitPoint.checkHP(this,EnemyMobControl1.HitPoint.hitPoint);
+				ScoreCount.scoreCount();
 			}else if (coll.gameObject.CompareTag("Player"))
 			{
 				Destroy(gameObject);

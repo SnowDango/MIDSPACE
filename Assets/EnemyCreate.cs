@@ -21,19 +21,26 @@ public class EnemyCreate : MonoBehaviour
 	    if (Time.frameCount % 60 == 0) {
 		    for (int i = 0; i < 4; i++)
 		    {
-			    randomX = Random.Range(-6.0f, 6.0f);
-			    GameObject enemy1 = Instantiate(enemyPrefab1,
-				    new Vector3(this.randomX, 5.0f, 0.0f), Quaternion.identity);
+			    createMob1();
 		    } 
-		    randomX = Random.Range(-6.0f, 6.0f);
-		    float radian = (float)getRadian(randomX, 5.0f, CpControl.CpX, CpControl.CpY);
-		    GameObject enemy2 = Instantiate(enemyPrefab2, 
-			    new Vector3(this.randomX, 5.0f, 0.0f),
-			    Quaternion.Euler(0, 0, radian));
-		    EnemyMobControl2 e = enemy2.GetComponent<EnemyMobControl2>(); 
-		    e.enemyData(radian);
+		    createMob2();
 	    }
     }
+
+	private void createMob1() 
+	{
+		randomX = Random.Range(-6.0f, 6.0f);
+		GameObject enemy1 = Instantiate(enemyPrefab1,
+			new Vector3(this.randomX, 5.0f, 0.0f), Quaternion.identity);
+	}
+
+	private void createMob2()
+	{
+		randomX = Random.Range(-6.0f, 6.0f);
+		var aim = CpControl.cpPosition;
+			GameObject enemy2 = Instantiate(enemyPrefab2, 
+			new Vector3(this.randomX, 5.0f, 0.0f),Quaternion.identity);
+	}
 	protected double getRadian(double x, double y, double x2, double y2) {
 		return Math.Atan2(y2 - y,x2 - x);
 	}

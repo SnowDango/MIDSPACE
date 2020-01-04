@@ -8,9 +8,11 @@ public class EnemyBulletController : MonoBehaviour {
 	public float dx;
 	public float dy;
 	public Boolean start = false;
+	private float speed = 0.1f;
+	
 	public void bulletData(double angels) {
-		dx = (float) (0.05 * Math.Cos(angels));
-		dy = (float) (0.05 * Math.Sin(angels));
+		dx = (float) (speed * Math.Cos(angels));
+		dy = (float) (speed * Math.Sin(angels));
 		start = true;
 	}
 	// Start is called before the first frame update
@@ -30,6 +32,7 @@ public class EnemyBulletController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.CompareTag("Player")) {
 			Destroy(gameObject);
+			
 		}
 	}
 }
