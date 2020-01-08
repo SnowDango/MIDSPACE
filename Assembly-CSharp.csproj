@@ -56,16 +56,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AudioChange.cs" />
      <Compile Include="Assets\BossObj\BossBulletCreate.cs" />
      <Compile Include="Assets\BossObj\BossController.cs" />
      <Compile Include="Assets\BossObj\BossMoveControl.cs" />
      <Compile Include="Assets\CheckHitPoint.cs" />
+     <Compile Include="Assets\DataController\DataControl.cs" />
      <Compile Include="Assets\EnemyCreate.cs" />
      <Compile Include="Assets\EnemyMobControl2.cs" />
      <Compile Include="Assets\EnemyObj\EnemyBulletController.cs" />
      <Compile Include="Assets\EnemyObj\EnemyMobControl1.cs" />
+     <Compile Include="Assets\LaserControl.cs" />
+     <Compile Include="Assets\Menu\Menu.cs" />
      <Compile Include="Assets\PlayerObj\CpBulletController.cs" />
      <Compile Include="Assets\PlayerObj\CpControl.cs" />
+     <Compile Include="Assets\Plugin\SQLite\DataTable.cs" />
+     <Compile Include="Assets\Plugin\SQLite\SqliteDatabase.cs" />
      <Compile Include="Assets\ScoreCount.cs" />
      <Compile Include="Assets\UIchanger.cs" />
  <Reference Include="Unity.Timeline.Editor">

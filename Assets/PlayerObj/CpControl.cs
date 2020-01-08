@@ -69,8 +69,20 @@ public class CpControl : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.CompareTag("EnemyBullet") ||  coll.gameObject.CompareTag("EnemyObject")) {
-			HitPoint.hitPoint -= 1;
-			CheckHitPoint.checkHP(this,HitPoint.hitPoint);
+			if (this.gameObject.CompareTag("Player"))
+			{
+				HitPoint.hitPoint -= 1;
+				CheckHitPoint.checkHP(this, HitPoint.hitPoint);
+				this.tag = "empty";
+				this.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+				Invoke(nameof(refreshTag), 3.0f);
+			}
 		}
+	}
+
+	void refreshTag()
+	{
+		this.tag = "Player";
+		this.GetComponent<SpriteRenderer>().color = new Color(1.0f,1.0f,1.0f,1.0f);
 	}
 }

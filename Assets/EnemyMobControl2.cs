@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Yukidango.BarrageShooting.Mob
@@ -40,14 +39,27 @@ namespace Yukidango.BarrageShooting.Mob
 				{
 					Destroy(gameObject);
 				}
-
+			if (Time.frameCount % 120 == 0)
+			{
+				fireBullet(this, 0, 0.05f, (float) ToRadian(-90));
+			}
+			
 		}
 
-		private float ToDegrees(double angle)
+		public static void fireBullet(EnemyMobControl2 e, float x, float y, float data)
 		{
-			return (float) (angle * Math.PI / 180);
+			var position = e.transform.position;
+			GameObject shot = Instantiate(e.enemyBulletPrefab,
+				new Vector3(position.x + x, position.y + y, position.z),
+				Quaternion.FromToRotation(Vector3.zero, new Vector3(x, y)));
+			EnemyBulletController s = shot.GetComponent<EnemyBulletController>();
+			s.bulletData(data);
 		}
 
+		public static double ToRadian(double angle)
+		{ 
+			return (double) (angle * Math.PI / 180);
+		}
 
 		void OnTriggerEnter2D(Collider2D coll) {
 			if (coll.gameObject.CompareTag("playerBullet")) {

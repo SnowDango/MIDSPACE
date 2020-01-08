@@ -58,8 +58,6 @@ namespace Yukidango.BarrageShooting.Mob
 			return (double) (angle * Math.PI / 180);
 		}
 
-		
-
 		void OnTriggerEnter2D(Collider2D coll) {
 			if (coll.gameObject.CompareTag("playerBullet"))
 			{

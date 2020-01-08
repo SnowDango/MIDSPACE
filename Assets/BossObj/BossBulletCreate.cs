@@ -81,9 +81,19 @@ namespace Yukidango.BarrageShooting.Boss
             var position = b.transform.position;
             GameObject shot = Object.Instantiate(b.enemyBulletPrefab,
                 new Vector3(position.x + x, position.y + y, position.z),
-                Quaternion.FromToRotation(Vector3.zero, new Vector3(x, y)));
+                Quaternion.identity);
             EnemyBulletController s = shot.GetComponent<EnemyBulletController>();
             s.bulletData(data);
+        }
+
+        public static void fireLaser(BossController b, float x, float y, float data)
+        {
+            var position = b.transform.position;
+            GameObject laser = Object.Instantiate(b.enemyLazerPrefab,
+                new Vector3(x, y, position.z),
+                Quaternion.identity);
+            LaserControl l = laser.GetComponent<LaserControl>();
+            l.setLaserData(data);
         }
 
         // public void parallelCircleBullet(double circleBulletDegrees )

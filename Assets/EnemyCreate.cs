@@ -9,7 +9,8 @@ public class EnemyCreate : MonoBehaviour
 {
 	private float randomX;
 
-	public GameObject enemyPrefab1,enemyPrefab2;
+	public GameObject enemyPrefab1,enemyPrefab2,bossPrefab;
+	public Boolean bossCreate = true;
 	// Start is called before the first frame update
     void Start()
     {
@@ -18,12 +19,23 @@ public class EnemyCreate : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-	    if (Time.frameCount % 60 == 0) {
-		    for (int i = 0; i < 4; i++)
+	    if (ScoreCount.score < 100)
+	    {
+		    if (Time.frameCount % 60 == 0)
 		    {
-			    createMob1();
-		    } 
-		    createMob2();
+			    for (int i = 0; i < 4; i++)
+			    {
+				    createMob1();
+			    }
+
+			    createMob2();
+		    }
+	    }else {
+		    if (bossCreate)
+		    {
+			    GameObject boss = Instantiate(bossPrefab, new Vector3(0, 7.0f, 0), Quaternion.identity);
+			    bossCreate = false;
+		    }   
 	    }
     }
 

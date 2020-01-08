@@ -12,74 +12,86 @@ namespace Yukidango.BarrageShooting.Boss
     public class BossController : MonoBehaviour
     {
 
-        public Boolean side = true;
-        public GameObject enemyBulletPrefab;
-        public static int bulletPatarn = 1;
-        public Boolean move = true;
-        public Boolean firstMove = true;
-        public GameObject shot;
+        public GameObject enemyBulletPrefab, enemyLazerPrefab; //　弾のprefab
+        public static int bulletPattern = 1; //　弾のパターンの制御
+        public Boolean move = true; //全体的な動きの制御
+        public Boolean firstMove = true; //最初の動きをしたかどうか
+        public Boolean callChangeBullet = true;
 
         public static class HitPoint
         {
-            public static int hitPoint = 5000;
+            public static int hitPoint = 1000; //HitPoint
         }
 
         // Start is called before the first frame update
-        void Start()
+        void Start() // 最初に呼び出されるメソッド
         {
         }
 
-        // Update is called once per frame
 
-        public static void updateHP()
+        void Update() //呼び出され続けるメソッド　
         {
-            HitPoint.hitPoint -= 3;
-        }
+            BossBulletCreate b = new BossBulletCreate();
 
-        void Update()
-        {
-            if (firstMove)
+            if (firstMove) //最初の動き
             {
                 transform.Translate(0, -0.05f, 0);
                 if (transform.position.y <= 4.0f) firstMove = false;
             }
-
-            if (Time.frameCount % 500 == 0)
-            {
-                System.Random r = new System.Random(1000);
-                bulletPatarn = Random.Range(0, 3);
-            }
-
-            if (bulletPatarn == 0)
-            {
-                BossBulletCreate.twoLineBullet(Time.frameCount, this);
-                BossMoveControl.twoLineMove(this, Time.frameCount);
-            }
-            else if (bulletPatarn == 1)
-            {
-                BossBulletCreate.circleBullet(Time.frameCount, this);
-                move = false;
-            }
-            else if (bulletPatarn == 2)
-            {
-                BossBulletCreate.parallelCircleBullet(Time.frameCount, this);
-            }
             
-        }
-
-        public double ToRadian(double angle)
-        {
-            return (double) (angle * Math.PI / 180);
-        }
-
-        void OnTriggerEnter2D(Collider2D coll)
-        {
-            if (coll.gameObject.CompareTag("playerBullet"))
+            if (bulletPattern == 0) //パターンの判定
             {
-                HitPoint.hitPoint -= 1;
-                CheckHitPoint.checkHP(this, HitPoint.hitPoint);
-                ScoreCount.scoreCount();
+                BossBulletCreate.twoLineBullet(Time.frameCount, this); //弾の発射メソッドの呼び出し
+                BossMoveControl.twoLineMove(this, Time.frameCount); //動きの呼び出し
+                if (callChangeBullet)
+                {
+                    Invoke("changeBulletPattern", 10.0f);
+                    callChangeBullet = false;
+                }
             }
+            else if (bulletPattern == 1)
+            {
+                BossBulletCreate.circleBullet(Time.frameCount, this); //　円形状に弾を撃つ
+                move = false; //動きをやめる
+                 if (callChangeBullet)
+                 { 
+                     Invoke("changeBulletPattern", 10.0f); 
+                     callChangeBullet = false;
+                 }
+            }
+            else if (bulletPattern == 2)
+            {
+                BossBulletCreate.parallelCircleBullet(Time.frameCount, this); //円形状に弾を撃つパート2
+                 if (callChangeBullet)
+                 { 
+                     Invoke("changeBulletPattern", 10.0f); 
+                     callChangeBullet = false;
+                 }
+            }
+
+            if (Time.frameCount % 1000 == bulletPattern)
+            {
+                BossBulletCreate.fireLaser(this, 5.0f, -3f, 10.0f);
+                BossBulletCreate.fireLaser(this, -5.0f, -3f, 10.0f);
+            }
+
+        }
+
+        void OnTriggerEnter2D(Collider2D coll) //物理判定に引っかかった場合
+        {
+            if (coll.gameObject.CompareTag("playerBullet")) //playerのたまに当たった場合
+            {
+                HitPoint.hitPoint -= 1; // HitPointを−1する
+                CheckHitPoint.checkHP(this, HitPoint.hitPoint); // Hpをチェックする
+                ScoreCount.scoreCount(); // scoreをカウントするメソッドを呼び出す
+            }
+        }
+
+        void changeBulletPattern()
+        {
+            System.Random r = new System.Random(1000);
+            bulletPattern = Random.Range(0, 3);
+            callChangeBullet = true;
         }
     }
 }

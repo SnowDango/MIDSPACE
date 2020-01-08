@@ -7,7 +7,7 @@ public class ScoreCount : MonoBehaviour
     public static int score;
     
     public static void scoreCount() {
-        score++;
+        score+=100;
     }
     // Start is called before the first frame update
     void Start()
