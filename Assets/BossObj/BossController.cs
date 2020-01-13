@@ -14,10 +14,11 @@ namespace Yukidango.BarrageShooting.Boss
 
         public GameObject enemyBulletPrefab, enemyLazerPrefab; //　弾のprefab
         public static int bulletPattern = 1; //　弾のパターンの制御
+        public static int subBulletPattern = 0;
         public Boolean move = true; //全体的な動きの制御
         public Boolean firstMove = true; //最初の動きをしたかどうか
         public Boolean callChangeBullet = true;
-
+        public GameObject hpSliderPrefab;
         public static class HitPoint
         {
             public static int hitPoint = 1000; //HitPoint
@@ -26,9 +27,10 @@ namespace Yukidango.BarrageShooting.Boss
         // Start is called before the first frame update
         void Start() // 最初に呼び出されるメソッド
         {
+            GameObject canvas = GameObject.Find("Canvas");
+            GameObject slider = Instantiate(hpSliderPrefab, canvas.transform);
         }
-
-
+        
         void Update() //呼び出され続けるメソッド　
         {
             BossBulletCreate b = new BossBulletCreate();
@@ -38,35 +40,53 @@ namespace Yukidango.BarrageShooting.Boss
                 transform.Translate(0, -0.05f, 0);
                 if (transform.position.y <= 4.0f) firstMove = false;
             }
-            
-            if (bulletPattern == 0) //パターンの判定
+
+            if (HitPoint.hitPoint > 500)
             {
-                BossBulletCreate.twoLineBullet(Time.frameCount, this); //弾の発射メソッドの呼び出し
-                BossMoveControl.twoLineMove(this, Time.frameCount); //動きの呼び出し
-                if (callChangeBullet)
+                if (bulletPattern == 0) //パターンの判定
                 {
+                    BossBulletCreate.twoLineBullet(Time.frameCount, this); //弾の発射メソッドの呼び出し
+                    BossMoveControl.twoLineMove(this, Time.frameCount); //動きの呼び出し
+                    
+                }
+                else if (bulletPattern == 1)
+                {
+                    BossBulletCreate.circleBullet(Time.frameCount, this); //　円形状に弾を撃つ
+                    move = false; //動きをやめる
+                    
+                }
+                else if (bulletPattern == 2)
+                {
+                    BossBulletCreate.parallelCircleBullet(Time.frameCount, this); //円形状に弾を撃つパート2
+                    
+                }
+                
+                if (callChangeBullet) {
                     Invoke("changeBulletPattern", 10.0f);
                     callChangeBullet = false;
                 }
-            }
-            else if (bulletPattern == 1)
-            {
-                BossBulletCreate.circleBullet(Time.frameCount, this); //　円形状に弾を撃つ
-                move = false; //動きをやめる
-                 if (callChangeBullet)
-                 { 
-                     Invoke("changeBulletPattern", 10.0f); 
-                     callChangeBullet = false;
-                 }
-            }
-            else if (bulletPattern == 2)
-            {
-                BossBulletCreate.parallelCircleBullet(Time.frameCount, this); //円形状に弾を撃つパート2
-                 if (callChangeBullet)
-                 { 
-                     Invoke("changeBulletPattern", 10.0f); 
-                     callChangeBullet = false;
-                 }
+            }else {
+                if (bulletPattern == 0) {
+                    if (subBulletPattern == 0) {
+                        BossBulletCreate.twoLineBullet(Time.frameCount, this);
+                        subBulletPattern = 1;
+                    }else if (subBulletPattern == 1) {
+                        BossBulletCreate.circleBullet(Time.frameCount, this);
+                        subBulletPattern = 2;
+                    }else if (subBulletPattern == 2) {
+                        BossBulletCreate.parallelCircleBullet(Time.frameCount, this);
+                        subBulletPattern = 0;
+                    }
+                }else if (bulletPattern == 1) {
+                    BossBulletCreate.deathBullet(Time.frameCount,this);
+                }
+                
+                BossMoveControl.twoLineMove(this, Time.frameCount);
+                
+                if (callChangeBullet) {
+                    Invoke("changeBulletPatternAlter", 10.0f);
+                    callChangeBullet = false;
+                }
             }
 
             if (Time.frameCount % 1000 == bulletPattern)
@@ -84,6 +104,12 @@ namespace Yukidango.BarrageShooting.Boss
                 HitPoint.hitPoint -= 1; // HitPointを−1する
                 CheckHitPoint.checkHP(this, HitPoint.hitPoint); // Hpをチェックする
                 ScoreCount.scoreCount(); // scoreをカウントするメソッドを呼び出す
+                
+                if (HitPoint.hitPoint == 500) {
+                    bulletPattern = 0;
+                    CancelInvoke("changeBulletPattern");
+                    callChangeBullet = true;
+                }
             }
         }
 
@@ -91,6 +117,13 @@ namespace Yukidango.BarrageShooting.Boss
         {
             System.Random r = new System.Random(1000);
             bulletPattern = Random.Range(0, 3);
+            callChangeBullet = true;
+        }
+
+        void changeBulletPatternAlter()
+        {
+            System.Random r = new System.Random(1000);
+            bulletPattern = Random.Range(0, 2);
             callChangeBullet = true;
         }
     }

@@ -11,6 +11,8 @@ public class EnemyCreate : MonoBehaviour
 
 	public GameObject enemyPrefab1,enemyPrefab2,bossPrefab;
 	public Boolean bossCreate = true;
+
+	public GameObject hpSliderPrefab;
 	// Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,9 @@ public class EnemyCreate : MonoBehaviour
 		    {
 			    for (int i = 0; i < 4; i++)
 			    {
-				    createMob1();
+				   createMob1();
+				   createMob2();
 			    }
-
-			    createMob2();
 		    }
 	    }else {
 		    if (bossCreate)
@@ -52,12 +53,13 @@ public class EnemyCreate : MonoBehaviour
 		var aim = CpControl.cpPosition;
 			GameObject enemy2 = Instantiate(enemyPrefab2, 
 			new Vector3(this.randomX, 5.0f, 0.0f),Quaternion.identity);
+		EnemyMobControl2 e = enemy2.GetComponent<EnemyMobControl2>();
+		e.setBulletAngles(getRadian(randomX,5.0f,CpControl.cpPosition.x,CpControl.cpPosition.y));
 	}
+	
 	protected double getRadian(double x, double y, double x2, double y2) {
-		return Math.Atan2(y2 - y,x2 - x);
-	}
-
-	protected float toDegrees(double radian) {
-		return (float) (radian * (180 / Math.PI));
-	}
+        double radian = Math.Atan2(y2 - y,x2 - x);
+        return radian;
+    }
+	
 }

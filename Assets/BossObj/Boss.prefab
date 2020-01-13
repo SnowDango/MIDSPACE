@@ -145,3 +145,5 @@ MonoBehaviour:
   move: 1
   firstMove: 1
   callChangeBullet: 1
+  hpSliderPrefab: {fileID: 1999666587168616672, guid: 62563d7cf9d9efd89a7d0c68822d487d,
+    type: 3}

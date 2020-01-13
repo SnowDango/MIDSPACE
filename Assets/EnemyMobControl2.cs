@@ -17,14 +17,18 @@ namespace Yukidango.BarrageShooting.Mob
 		public GameObject enemyBulletPrefab;
 		float TimeCount　= 15;
 		private float speed = 0.075f;
-		
-		
+		private double bulletAngles;
+
+		public void setBulletAngles(double angles)
+		{
+			bulletAngles = angles;
+		}
+
 		// Start is called before the first frame update
 		void Start()
 		{
 			var diff = (CpControl.cpPosition - transform.position ).normalized;
 			transform.rotation = Quaternion.FromToRotation( Vector3.down,  diff);
-			dy = -1 * speed;
 		}
 
 		// Update is called once per frame
@@ -32,7 +36,7 @@ namespace Yukidango.BarrageShooting.Mob
 		{
 			TimeCount -= Time.deltaTime;
 
-			transform.Translate(0, -0.075f, 0);
+			transform.Translate(0, -speed, 0);
 
 				if (transform.position.y < -5 || transform.position.y > 5
 					|| transform.position.x > 6.5 || transform.position.x < -6.5)
@@ -41,7 +45,7 @@ namespace Yukidango.BarrageShooting.Mob
 				}
 			if (Time.frameCount % 120 == 0)
 			{
-				fireBullet(this, 0, 0.05f, (float) ToRadian(-90));
+				fireBullet(this, 0, 0.05f, (float) bulletAngles);
 			}
 			
 		}
@@ -54,11 +58,6 @@ namespace Yukidango.BarrageShooting.Mob
 				Quaternion.FromToRotation(Vector3.zero, new Vector3(x, y)));
 			EnemyBulletController s = shot.GetComponent<EnemyBulletController>();
 			s.bulletData(data);
-		}
-
-		public static double ToRadian(double angle)
-		{ 
-			return (double) (angle * Math.PI / 180);
 		}
 
 		void OnTriggerEnter2D(Collider2D coll) {

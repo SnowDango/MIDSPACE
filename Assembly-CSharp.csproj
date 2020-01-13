@@ -59,9 +59,13 @@
      <Compile Include="Assets\AudioChange.cs" />
      <Compile Include="Assets\BossObj\BossBulletCreate.cs" />
      <Compile Include="Assets\BossObj\BossController.cs" />
+     <Compile Include="Assets\BossObj\BossHpSliderControl.cs" />
      <Compile Include="Assets\BossObj\BossMoveControl.cs" />
      <Compile Include="Assets\CheckHitPoint.cs" />
      <Compile Include="Assets\DataController\DataControl.cs" />
+     <Compile Include="Assets\DataController\DataFormat.cs" />
+     <Compile Include="Assets\End\ResultControl.cs" />
+     <Compile Include="Assets\End\ResultScoreTextControl.cs" />
      <Compile Include="Assets\EnemyCreate.cs" />
      <Compile Include="Assets\EnemyMobControl2.cs" />
      <Compile Include="Assets\EnemyObj\EnemyBulletController.cs" />
@@ -73,6 +77,7 @@
      <Compile Include="Assets\Plugin\SQLite\DataTable.cs" />
      <Compile Include="Assets\Plugin\SQLite\SqliteDatabase.cs" />
      <Compile Include="Assets\ScoreCount.cs" />
+     <Compile Include="Assets\TimeControl.cs" />
      <Compile Include="Assets\UIchanger.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/yuki/BarrageShooting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

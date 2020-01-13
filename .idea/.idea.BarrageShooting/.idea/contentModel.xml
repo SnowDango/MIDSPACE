@@ -10,9 +10,18 @@
         <e p="BossObj" t="Include">
           <e p="BossBulletCreate.cs" t="Include" />
           <e p="BossController.cs" t="Include" />
+          <e p="BossHpSliderControl.cs" t="Include" />
           <e p="BossMoveControl.cs" t="Include" />
         </e>
         <e p="CheckHitPoint.cs" t="Include" />
+        <e p="DataController" t="Include">
+          <e p="DataControl.cs" t="Include" />
+          <e p="DataFormat.cs" t="Include" />
+        </e>
+        <e p="End" t="Include">
+          <e p="ResultControl.cs" t="Include" />
+          <e p="ResultScoreTextControl.cs" t="Include" />
+        </e>
         <e p="EnemyCreate.cs" t="Include" />
         <e p="EnemyMobControl2.cs" t="Include" />
         <e p="EnemyObj" t="Include">
@@ -34,6 +43,7 @@
           </e>
         </e>
         <e p="ScoreCount.cs" t="Include" />
+        <e p="TimeControl.cs" t="Include" />
         <e p="UIchanger.cs" t="Include" />
       </e>
       <e p="BarrageShooting.sln" t="IncludeFlat" />

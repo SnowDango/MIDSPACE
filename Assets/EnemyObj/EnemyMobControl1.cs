@@ -10,9 +10,9 @@ namespace Yukidango.BarrageShooting.Mob
 
 		public class HitPoint
 		{
-			public static int hitPoint = 5; 
+			public static int hitPoint = 5;
 		}
-		
+
 		public float dx;
 		public float dy;
 		public Boolean start = true;

@@ -18,8 +18,10 @@ namespace Yukidango.BarrageShooting.Boss
     {
 
         private static Boolean circleBulletMode = true;
-        private static int circleBulletDegrees = 0;
+        public static int circleBulletDegrees = 0;
+        private static Boolean circleTurnMode;
         private static List<float> absDegrees;
+        public static int deathBulletDegrees = 0; 
 
         public static void twoLineBullet(double frameCount, BossController b)
         {
@@ -74,6 +76,33 @@ namespace Yukidango.BarrageShooting.Boss
                 circleBulletDegrees += 8;
             }
 
+        }
+
+        public static void deathBullet(double frameCount, BossController b)
+        {
+            if (frameCount % 2 == 0)
+            {
+                fireBullet(b, (float) (1.6f * Math.Cos(ToRadian(-30 - deathBulletDegrees))),
+                    (float) (1.6f * Math.Sin(ToRadian(-30 - deathBulletDegrees))),
+                    (float) ToRadian(- 30 - deathBulletDegrees));
+                fireBullet(b, (float) (1.6f * Math.Cos(ToRadian(-150 + deathBulletDegrees))),
+                    (float) (1.6f * Math.Sin(ToRadian(-150 + deathBulletDegrees))),
+                    (float) ToRadian(-150 + deathBulletDegrees));
+
+                if (deathBulletDegrees <= 0) {
+                    circleTurnMode = false;
+                }else if (deathBulletDegrees >= 120) {
+                    circleTurnMode = true;
+                } 
+                
+                if (circleTurnMode) {
+                    Debug.Log("sssss");
+                    deathBulletDegrees -= 8;
+                }else {
+                    Debug.Log("dsdsds");
+                    deathBulletDegrees += 8;
+                }
+            }
         }
 
         public static void fireBullet(BossController b, float x, float y, float data)

@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     {
         GameObject text = GameObject.Find("Text");
         text.GetComponent<Text>().color = Color.magenta;
-        text.GetComponent<Text>().text = "Please Space";
+        text.GetComponent<Text>().text = "Please Enter";
     }
 
     // Update is called once per frame
