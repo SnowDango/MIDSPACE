@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeControl : MonoBehaviour
@@ -26,6 +27,8 @@ public class TimeControl : MonoBehaviour
             minute--;
             seconds += 60;
         }
+        
+        if(minute <= 0 && seconds <= 0) SceneManager.LoadScene("EndCard");
         this.GetComponent<Text>().text = "LimitTime => "+minute+":"+((int)seconds).ToString("00");
     }
 }
