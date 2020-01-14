@@ -13,7 +13,7 @@ public class TimeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minute = 2;
+        minute = 4;
         seconds = 60;
         this.GetComponent<Text>().color = Color.red;
     }
