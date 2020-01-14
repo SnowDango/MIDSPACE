@@ -21,6 +21,8 @@ public class CheckHitPoint : MonoBehaviour {
 	public static void checkHP(CpControl c,double hitPoint) {
 		if (hitPoint <= 0) {
 			Destroy(c.gameObject);
+			DataControll dataControll = new DataControll();
+			dataControll.insertDb(ScoreCount.score);
 			SceneManager.LoadScene("EndCard");
 		}
 	}

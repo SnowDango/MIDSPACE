@@ -38,7 +38,7 @@ namespace Yukidango.BarrageShooting.End
             for (int i = 0; i < data.Length; i++)
             {
                 GameObject _text = Instantiate (textPrefab, content.transform);
-                string textData = "Rank" + i.ToString() + " score:" + data[i].score  +" date:" + data[i].date;
+                string textData = "Rank" + (i+1).ToString() + " score:" + data[i].score  +" date:" + data[i].date;
                 ResultScoreTextControl r = _text.GetComponent<ResultScoreTextControl>();
                 r.setTextData(textData);
             }

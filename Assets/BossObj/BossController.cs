@@ -49,7 +49,7 @@ namespace Yukidango.BarrageShooting.Boss
                 if (transform.position.y <= 4.0f) firstMove = false;
             }
 
-            if (HitPoint.hitPoint > 500)
+            if (HitPoint.hitPoint > 300)
             {
                 if (bulletPattern == 0) //パターンの判定
                 {
