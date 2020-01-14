@@ -14,6 +14,7 @@ namespace Yukidango.BarrageShooting.Boss
 
         public GameObject enemyBulletPrefab, enemyLazerPrefab; //　弾のprefab
         public static int bulletPattern; //　弾のパターンの制御
+        public static int lastBulletPattern;
         public static int subBulletPattern;
         public Boolean move; //全体的な動きの制御
         public Boolean firstMove; //最初の動きをしたかどうか
@@ -113,7 +114,7 @@ namespace Yukidango.BarrageShooting.Boss
                 CheckHitPoint.checkHP(this, HitPoint.hitPoint); // Hpをチェックする
                 ScoreCount.scoreCount(); // scoreをカウントするメソッドを呼び出す
                 
-                if (HitPoint.hitPoint == 500) {
+                if (HitPoint.hitPoint == 300) {
                     bulletPattern = 0;
                     CancelInvoke("changeBulletPattern");
                     callChangeBullet = true;
