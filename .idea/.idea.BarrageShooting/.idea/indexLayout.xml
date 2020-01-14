@@ -19,6 +19,7 @@
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>MIDSPACE</Path>
+      <Path>Temp</Path>
       <Path>obj</Path>
       <Path>shooting</Path>
     </explicitExcludes>

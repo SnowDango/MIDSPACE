@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dac2e03f0afb3e878e6b5b550096897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletPrefab: {fileID: 1743040960943619305, guid: 0db7b2b91b284047d9a21ff0e626cb24,
+  enemyBulletPrefab: {fileID: 5470827745086838505, guid: 254da2a76e8db10f78d7f7700fd6acde,
     type: 3}
   enemyLazerPrefab: {fileID: 5709615142159313083, guid: e592c982449d9a22c9d5e56fd358956f,
     type: 3}
