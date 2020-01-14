@@ -11,14 +11,14 @@ using Yukidango.BarrageShooting.DataBase;
 
 	 public class DataControll : MonoBehaviour
 	 {
-		 public static SqliteDatabase sqlDB;
+		 
 
 		 public void insertDb(int score)
 		 {
 
 			 try
 			 {
-				 sqlDB = new SqliteDatabase(Application.dataPath + "/StreamingAssets/score.db");
+				 SqliteDatabase sqlDB = new SqliteDatabase(Application.dataPath + "/StreamingAssets/score.db");
 
 				 List<DataFormat> dataList = new List<DataFormat>();
 				 string query = "select * from score order by score desc";
@@ -54,7 +54,7 @@ using Yukidango.BarrageShooting.DataBase;
 		 
 		 
 		 public static DataFormat[] getDb() {
-			 sqlDB = new SqliteDatabase(Application.dataPath + "/StreamingAssets/score.db");
+			 SqliteDatabase sqlDB = new SqliteDatabase(Application.dataPath + "/StreamingAssets/score.db");
 			 
 			 DataFormat[] data = new DataFormat[10];
 			 string selectQuery = "select * from score order by score desc";

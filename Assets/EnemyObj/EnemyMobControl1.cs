@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yukidango.BarrageShooting.Boss;
 
 namespace Yukidango.BarrageShooting.Mob
 {
@@ -10,7 +11,7 @@ namespace Yukidango.BarrageShooting.Mob
 
 		public class HitPoint
 		{
-			public static int hitPoint = 5;
+			public static int hitPoint;
 		}
 
 		public float dx;
@@ -23,6 +24,7 @@ namespace Yukidango.BarrageShooting.Mob
 		void Start()
 		{
 			dy = -1 * speed;
+			BossController.HitPoint.hitPoint = 5;
 		}
 
 		// Update is called once per frame

@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject text = GameObject.Find("Text");
+        var text = GameObject.Find("Text");
         text.GetComponent<Text>().color = Color.magenta;
         text.GetComponent<Text>().text = "Please Enter";
     }

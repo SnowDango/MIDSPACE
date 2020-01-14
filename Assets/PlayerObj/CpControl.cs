@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yukidango.BarrageShooting.Boss;
 
 public struct bullet {
 	private float x;
@@ -31,6 +32,7 @@ public class CpControl : MonoBehaviour {
 
 	void Start() {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+		HitPoint.hitPoint = 5;
 	}
 
     // Update is called once per frame

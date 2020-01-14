@@ -21,7 +21,7 @@ public class EnemyCreate : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-	    if (ScoreCount.score < 100)
+	    if (TimeControl.minute >= 2)
 	    {
 		    if (Time.frameCount % 60 == 0)
 		    {

@@ -13,11 +13,11 @@ namespace Yukidango.BarrageShooting.Boss
     {
 
         public GameObject enemyBulletPrefab, enemyLazerPrefab; //　弾のprefab
-        public static int bulletPattern = 1; //　弾のパターンの制御
-        public static int subBulletPattern = 0;
-        public Boolean move = true; //全体的な動きの制御
-        public Boolean firstMove = true; //最初の動きをしたかどうか
-        public Boolean callChangeBullet = true;
+        public static int bulletPattern; //　弾のパターンの制御
+        public static int subBulletPattern;
+        public Boolean move; //全体的な動きの制御
+        public Boolean firstMove; //最初の動きをしたかどうか
+        public Boolean callChangeBullet;
         public GameObject hpSliderPrefab;
         public static class HitPoint
         {
@@ -29,6 +29,14 @@ namespace Yukidango.BarrageShooting.Boss
         {
             GameObject canvas = GameObject.Find("Canvas");
             GameObject slider = Instantiate(hpSliderPrefab, canvas.transform);
+            bulletPattern = 1;
+            subBulletPattern = 0;
+            move = true;
+            firstMove = true;
+            callChangeBullet = true;
+            HitPoint.hitPoint = 1000;
+            BossBulletCreate.circleBulletDegrees = 0;
+            BossBulletCreate.deathBulletDegrees = 0;
         }
         
         void Update() //呼び出され続けるメソッド　
