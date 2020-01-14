@@ -11,17 +11,22 @@ public class EnemyCreate : MonoBehaviour
 
 	public GameObject enemyPrefab1,enemyPrefab2,bossPrefab;
 	public Boolean bossCreate = true;
+	public Boolean enemyCreate = true;
 
 	public GameObject hpSliderPrefab;
 	// Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update() {
-	    if (TimeControl.minute >= 2)
+    void Update()
+    {
+	    if (TimeControl.seconds <= 30) {
+		    enemyCreate = false;
+	    }
+
+	    if (enemyCreate)
 	    {
 		    if (Time.frameCount % 60 == 0)
 		    {
