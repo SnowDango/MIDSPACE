@@ -18,7 +18,10 @@
       <Path>.idea</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>ReleaseApp</Path>
+      <Path>Temp</Path>
       <Path>obj</Path>
+      <Path>release</Path>
       <Path>shooting</Path>
     </explicitExcludes>
   </component>

@@ -755,4 +755,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TileDisplay.unity
   - Assets/Scenes/MIDSPACE.unity
   - Assets/Scenes/EndCard.unity
-  playerPath: /home/yuki/Documents/MIDSPACE/MIDSAPCE.exe
+  playerPath: /home/yuki/BarrageShooting/ReleaseApp/MIDSAPCE.exe
