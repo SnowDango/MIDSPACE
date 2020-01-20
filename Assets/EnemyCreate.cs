@@ -12,7 +12,11 @@ public class EnemyCreate : MonoBehaviour
 	public GameObject enemyPrefab1,enemyPrefab2,bossPrefab;
 	public Boolean bossCreate = true;
 	public Boolean enemyCreate = true;
-
+	
+	void Awake() {
+    Application.targetFrameRate = 60; //60FPSに設定
+    }
+	
 	public GameObject hpSliderPrefab;
 	// Start is called before the first frame update
     void Start()

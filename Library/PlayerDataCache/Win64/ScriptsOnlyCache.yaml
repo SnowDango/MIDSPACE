@@ -18,12 +18,8 @@ ScriptsOnlyBuild:
     - Yukidango.BarrageShooting.Mob.EnemyMobControl2
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -759,4 +755,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TileDisplay.unity
   - Assets/Scenes/MIDSPACE.unity
   - Assets/Scenes/EndCard.unity
-  playerPath: /home/yuki/BarrageShooting/MIDSPACE/MIDSAPCE.exe
+  playerPath: /home/yuki/Documents/MIDSPACE/MIDSAPCE.exe
