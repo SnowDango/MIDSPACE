@@ -34,7 +34,7 @@ using Yukidango.BarrageShooting.DataBase;
 						 
 						 Debug.Log("before delete");
 
-						 query = "update or replace score set score = " +score+ " , date = datetime('now') where id=" + (int)dataTable[9]["id"];
+						 query = "update or replace score set score = " +score+ " , date = datetime('now','+9 hours') where id=" + (int)dataTable[9]["id"];
 						 sqlDB.ExecuteQuery(query);
 						 
 						 Debug.Log("insert finish");
@@ -42,7 +42,7 @@ using Yukidango.BarrageShooting.DataBase;
 				 }
 				 else
 				 {
-					 query = "insert into score(score,date) values (" + score + ",datetime('now'))";
+					 query = "insert into score(score,date) values (" + score + ",datetime('now','+9 hours'))";
 					 sqlDB.ExecuteQuery(query);
 				 }
 			 }

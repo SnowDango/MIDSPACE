@@ -42,27 +42,55 @@ public class CpControl : MonoBehaviour {
 
 	    MainSpriteRenderer.sprite = DefaultSprite;
 
-	    if (Input.GetKey (KeyCode.LeftArrow)) {
-		    if (cpPosition.x >= -6.0f) {
-			    MainSpriteRenderer.sprite = LeftSprite;
-			    transform.Translate (-1*speed, 0, 0);
-		    }
-	    }else if (Input.GetKey (KeyCode.RightArrow)) {
-		    if (cpPosition.x <= 6.0f) {
-			    MainSpriteRenderer.sprite = RightSprite;
-			    transform.Translate ( speed, 0, 0);
-		    }
-	    } 
-	    if (Input.GetKey(KeyCode.UpArrow)) {
-		    if (cpPosition.y <= -0.05) {
-			    transform.Translate (0,speed,0);
-		    }
-	    }else if (Input.GetKey(KeyCode.DownArrow)) {
-		    if (cpPosition.y >= -4.55) {
-			    MainSpriteRenderer.sprite = StandbySprite;
-			    transform.Translate(0,-1*speed,0);
+	    if (Input.GetKey(KeyCode.LeftShift))
+	    {
+		    if (Input.GetKey (KeyCode.LeftArrow)) {
+			    if (cpPosition.x >= -6.0f) {
+				    MainSpriteRenderer.sprite = LeftSprite;
+				    transform.Translate (-1*speed/2, 0, 0);
+			    }
+		    }else if (Input.GetKey (KeyCode.RightArrow)) {
+			    if (cpPosition.x <= 6.0f) {
+				    MainSpriteRenderer.sprite = RightSprite;
+				    transform.Translate ( speed/2, 0, 0);
+			    } 
+		    } 
+		    if (Input.GetKey(KeyCode.UpArrow)) {
+			    if (cpPosition.y <= -0.05) {
+				    transform.Translate (0,speed/2,0);
+			    }
+		    }else if (Input.GetKey(KeyCode.DownArrow)) {
+			    if (cpPosition.y >= -4.55) {
+				    MainSpriteRenderer.sprite = StandbySprite;
+				    transform.Translate(0,-1*speed/2,0);
+			    }
 		    }
 	    }
+	    else
+	    {
+		    if (Input.GetKey (KeyCode.LeftArrow)) {
+			    if (cpPosition.x >= -6.0f) {
+				    MainSpriteRenderer.sprite = LeftSprite;
+				    transform.Translate (-1*speed, 0, 0);
+			    }
+		    }else if (Input.GetKey (KeyCode.RightArrow)) {
+			    if (cpPosition.x <= 6.0f) {
+				    MainSpriteRenderer.sprite = RightSprite;
+				    transform.Translate ( speed, 0, 0);
+			    }
+		    } 
+		    if (Input.GetKey(KeyCode.UpArrow)) {
+			    if (cpPosition.y <= -0.05) {
+				    transform.Translate (0,speed,0);
+			    }
+		    }else if (Input.GetKey(KeyCode.DownArrow)) {
+			    if (cpPosition.y >= -4.55) {
+				    MainSpriteRenderer.sprite = StandbySprite;
+				    transform.Translate(0,-1*speed,0);
+			    }
+		    }
+	    }
+	    
 	    
 	    if (Time.frameCount % 4 == 0 ) {
 		    Instantiate(bulletPrefab, new Vector3(cpPosition.x,cpPosition.y+0.4f,cpPosition.z), Quaternion.identity);

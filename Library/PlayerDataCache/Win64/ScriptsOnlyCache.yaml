@@ -18,6 +18,8 @@ ScriptsOnlyBuild:
     - Yukidango.BarrageShooting.Mob.EnemyMobControl2
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     UnityEditor.TestRunner.dll:
@@ -54,29 +56,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11134}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11394}
+      Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11668}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 11902}
+      Script: {instanceID: 11904}
     - Class: 114
-      Script: {instanceID: 11960}
+      Script: {instanceID: 11962}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 12672}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 13056}
+      Script: {instanceID: 13058}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -119,43 +121,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11134}
     - Class: 114
-      Script: {instanceID: 11234}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11476}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11516}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 11596}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 11928}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12224}
+      Script: {instanceID: 12226}
     - Class: 114
-      Script: {instanceID: 12292}
+      Script: {instanceID: 12294}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12672}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 12986}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 13056}
+      Script: {instanceID: 13058}
     - Class: 114
-      Script: {instanceID: 13088}
+      Script: {instanceID: 13090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,19 +196,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11134}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 12672}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 13056}
+      Script: {instanceID: 13058}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -755,4 +757,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/TileDisplay.unity
   - Assets/Scenes/MIDSPACE.unity
   - Assets/Scenes/EndCard.unity
-  playerPath: /home/yuki/BarrageShooting/ReleaseApp/MIDSAPCE.exe
+  playerPath: /home/yuki/BarrageShooting/ReleaseApp/release-v1.1/MIDSAPCE.exe
